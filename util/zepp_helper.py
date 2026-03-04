@@ -128,7 +128,7 @@ def grant_login_tokens(access_token, device_id, is_phone=False) -> (str | None, 
             "third_name": "email",
         }
     resp = requests.post(url, data=data, headers=headers).json()
-    # print("请求客户端登录成功：%s" % json.dumps(resp, ensure_ascii=False, indent=2))  #
+    print("请求客户端登录成功：%s" % json.dumps(resp, ensure_ascii=False, indent=2))
     _login_token, _userid, _app_token = None, None, None
     try:
         result = resp.get("result")
